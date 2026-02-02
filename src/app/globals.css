@@ -7,14 +7,51 @@
 }
 
 body {
-  @apply bg-white text-slate-900 antialiased;
+  @apply bg-[#f6f2ea] text-[#182321] antialiased;
+  font-family: var(--font-body);
 }
 
-.hero-gradient {
-  background: radial-gradient(circle at top, rgba(25, 177, 216, 0.18), transparent 55%),
-    linear-gradient(135deg, rgba(47, 179, 108, 0.12), rgba(25, 177, 216, 0.1));
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.hero-slider {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slide {
+  opacity: 0;
+  animation: heroFade 12s infinite;
+  transform: scale(1.03);
+}
+
+.hero-slide--2 {
+  animation-delay: 6s;
+}
+
+@keyframes heroFade {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  45% {
+    opacity: 0.9;
+  }
+  55% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .section-divider {
-  background: linear-gradient(90deg, rgba(25, 177, 216, 0.2), rgba(47, 179, 108, 0.2));
+  background: linear-gradient(90deg, rgba(244, 194, 71, 0.5), rgba(42, 168, 117, 0.5));
 }
