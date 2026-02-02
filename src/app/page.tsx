@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import {
   ArrowRight,
   HandHeart,
@@ -138,23 +137,7 @@ const navLinks = [
   { label: "Contact", href: "#contact" }
 ];
 
-const heroImages = [
-  "https://images.unsplash.com/photo-1520683870355-97b5ed187c6c?auto=format&fit=crop&w=1600&q=80",
-  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80",
-  "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1600&q=80"
-];
-
 export default function HomePage() {
-  const [heroIndex, setHeroIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setHeroIndex((current) => (current + 1) % heroImages.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="bg-white">
       <header className="sticky top-0 z-40 border-b border-slate-100 bg-white/90 backdrop-blur">
@@ -187,27 +170,8 @@ export default function HomePage() {
         </div>
       </header>
 
-      <section id="home" className="relative overflow-hidden hero-gradient">
-        <div className="absolute inset-0">
-          <motion.div
-            key={heroImages[heroIndex]}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={heroImages[heroIndex]}
-              alt="Somali community support"
-              fill
-              className="object-cover"
-              priority
-            />
-          </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/60" />
-        </div>
-        <div className="relative mx-auto grid max-w-6xl gap-10 px-6 py-24 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <section id="home" className="hero-gradient">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <motion.div {...fadeUp}>
             <Badge className="mb-4">Transforming lives since 2013</Badge>
             <h1 className="text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl">
