@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
+  ArrowUp,
   HandHeart,
   Leaf,
   Users,
@@ -18,7 +20,9 @@ import {
   Phone,
   Mail,
   MessageCircle,
-  CheckCircle2
+  CheckCircle2,
+  Menu,
+  X
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -144,6 +148,7 @@ const heroImages = [
 ];
 
 export default function HomePage() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="bg-[#f6f2ea] text-[#182321]">
       <section id="home" className="relative isolate overflow-hidden bg-[#0f231e] text-white">
@@ -182,8 +187,14 @@ export default function HomePage() {
             </div>
             <div className="flex items-center justify-between py-5">
               <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10">
-                  <div className="h-7 w-7 rounded-full bg-gradient-to-br from-[#f4c247] via-[#f0b93c] to-[#2aa875]" />
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 p-2">
+                  <Image
+                    src="https://res.cloudinary.com/dzw5pskk1/image/upload/v1770038393/607bc899-dac8-47e0-886e-948d475268d6-removebg-preview_l9c9s4.png"
+                    alt="GRDO logo"
+                    width={36}
+                    height={36}
+                    className="h-9 w-9 object-contain"
+                  />
                 </div>
                 <div>
                   <p className="font-display text-lg font-semibold tracking-wide">GRDO</p>
@@ -204,6 +215,41 @@ export default function HomePage() {
                 >
                   Donate now
                 </Button>
+              </div>
+              <div className="flex items-center gap-3 lg:hidden">
+                <Button
+                  size="sm"
+                  className="bg-white text-[#0f231e] hover:bg-[#f4c247] hover:text-[#0f231e]"
+                >
+                  Donate
+                </Button>
+                <button
+                  type="button"
+                  aria-label="Toggle navigation"
+                  aria-expanded={menuOpen}
+                  onClick={() => setMenuOpen((open) => !open)}
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition hover:bg-white/10"
+                >
+                  {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                </button>
+              </div>
+            </div>
+            <div
+              className={`lg:hidden ${menuOpen ? "block" : "hidden"}`}
+            >
+              <div className="rounded-2xl border border-white/10 bg-[#0f231e]/95 p-4 text-sm text-white/80 shadow-[0_20px_50px_-35px_rgba(0,0,0,0.6)]">
+                <div className="grid gap-3">
+                  {navLinks.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="rounded-xl px-3 py-2 transition hover:bg-white/10 hover:text-white"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -729,8 +775,14 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1.2fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10">
-                <div className="h-7 w-7 rounded-full bg-gradient-to-br from-[#f4c247] via-[#f0b93c] to-[#2aa875]" />
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 p-2">
+                <Image
+                  src="https://res.cloudinary.com/dzw5pskk1/image/upload/v1770038393/607bc899-dac8-47e0-886e-948d475268d6-removebg-preview_l9c9s4.png"
+                  alt="GRDO logo"
+                  width={36}
+                  height={36}
+                  className="h-9 w-9 object-contain"
+                />
               </div>
               <div>
                 <p className="font-display text-lg text-white">GRDO</p>
@@ -779,6 +831,15 @@ export default function HomePage() {
           © {new Date().getFullYear()} Great-Life Relief and Development Organization. All rights reserved.
         </div>
       </footer>
+
+      <button
+        type="button"
+        aria-label="Scroll to top"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#f4c247] text-[#0f231e] shadow-[0_18px_40px_-20px_rgba(15,35,30,0.8)] transition hover:-translate-y-1"
+      >
+        <ArrowUp className="h-5 w-5" />
+      </button>
     </div>
   );
 }
