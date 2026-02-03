@@ -143,8 +143,8 @@ const navLinks = [
 ];
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1634571965334-0c8ec2604bfb?auto=format&fit=crop&w=1800&q=80",
-  "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1800&q=80"
+  "https://res.cloudinary.com/dzw5pskk1/image/upload/v1770100318/WhatsApp_Image_2026-02-02_at_23.54.54_ctrn4y.jpg",
+  "https://res.cloudinary.com/dzw5pskk1/image/upload/v1770100319/WhatsApp_Image_2026-02-02_at_23.54.55_1_u9ucw5.jpg"
 ];
 
 export default function HomePage() {
@@ -197,8 +197,12 @@ export default function HomePage() {
                   />
                 </div>
                 <div>
-                  <p className="font-display text-lg font-semibold tracking-wide">GRDO</p>
-                  <p className="text-xs text-white/70">Great-Life Relief & Development</p>
+                  <p className="font-display text-lg font-semibold tracking-wide text-[#7FFC8D]">
+                    Great-Life Relief & Development
+                  </p>
+                  <p className="text-[11px] text-white/80">
+                    Transforming Lives. Building Resilient Communities.
+                  </p>
                 </div>
               </div>
               <nav className="hidden items-center gap-6 text-sm text-white/80 lg:flex">
@@ -209,20 +213,24 @@ export default function HomePage() {
                 ))}
               </nav>
               <div className="hidden items-center gap-3 lg:flex">
-                <Button
-                  size="sm"
-                  className="bg-white text-[#0f231e] hover:bg-[#f4c247] hover:text-[#0f231e]"
+                <a
+                  href="https://wa.me/254759994805"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex h-9 items-center justify-center gap-2 rounded-full bg-white px-3 text-xs font-semibold text-[#0f231e] transition hover:bg-[#f4c247] hover:text-[#0f231e]"
                 >
                   Donate now
-                </Button>
+                </a>
               </div>
               <div className="flex items-center gap-3 lg:hidden">
-                <Button
-                  size="sm"
-                  className="bg-white text-[#0f231e] hover:bg-[#f4c247] hover:text-[#0f231e]"
+                <a
+                  href="https://wa.me/254759994805"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex h-9 items-center justify-center gap-2 rounded-full bg-white px-3 text-xs font-semibold text-[#0f231e] transition hover:bg-[#f4c247] hover:text-[#0f231e]"
                 >
                   Donate
-                </Button>
+                </a>
                 <button
                   type="button"
                   aria-label="Toggle navigation"
@@ -271,10 +279,10 @@ export default function HomePage() {
               society development—especially in fragile and underserved contexts.
             </p>
             <div className="mx-auto flex flex-wrap justify-center gap-3">
-              <Badge className="bg-white/10 text-white">
+              <Badge className="gap-2 bg-white/10 px-4 py-2 text-white">
                 <MapPin className="h-3.5 w-3.5" /> Headquarters: Baidoa, Somalia
               </Badge>
-              <Badge className="bg-white/10 text-white">
+              <Badge className="gap-2 bg-white/10 px-4 py-2 text-white">
                 <Globe className="h-3.5 w-3.5" /> Coverage: All Federal Member States of Somalia
               </Badge>
             </div>
@@ -294,8 +302,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="about" className="py-24">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <section id="about" className="relative isolate overflow-hidden py-24">
+        <Image
+          src="https://res.cloudinary.com/dzw5pskk1/image/upload/v1770100318/WhatsApp_Image_2026-02-02_at_23.54.54_ctrn4y.jpg"
+          alt="About background"
+          fill
+          className="object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f6f2ea]/60 via-[#f6f2ea]/75 to-[#f6f2ea]/90" />
+        <div className="relative mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <motion.div {...fadeUp}>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#2a6c55]">ABOUT US</p>
             <h2 className="font-display mt-5 text-3xl text-[#132420] sm:text-4xl">Who We Are</h2>
@@ -338,7 +353,7 @@ export default function HomePage() {
             <div className="absolute -left-10 -top-10 h-24 w-24 rounded-full border border-[#f4c247]/60" />
             <div className="relative mx-auto aspect-square w-full max-w-[420px] overflow-hidden rounded-full border-[12px] border-white bg-[#f6f2ea] shadow-[0_30px_80px_-50px_rgba(15,35,30,0.6)]">
               <Image
-                src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=900&q=80"
+                src="https://res.cloudinary.com/dzw5pskk1/image/upload/v1770100318/WhatsApp_Image_2026-02-02_at_23.54.54_2_myqy1k.jpg"
                 alt="Community classroom"
                 fill
                 className="object-cover"
@@ -346,7 +361,7 @@ export default function HomePage() {
             </div>
             <div className="absolute -bottom-10 right-0 w-40 overflow-hidden rounded-[28px] border-8 border-white bg-[#0f231e] shadow-[0_20px_50px_-30px_rgba(15,35,30,0.7)]">
               <Image
-                src="https://images.unsplash.com/photo-1585335947094-79dcc6a5e4e0?auto=format&fit=crop&w=600&q=80"
+                src="https://res.cloudinary.com/dzw5pskk1/image/upload/v1770100319/WhatsApp_Image_2026-02-02_at_23.54.55_kt4cwy.jpg"
                 alt="Community leader"
                 width={220}
                 height={220}
@@ -467,7 +482,7 @@ export default function HomePage() {
             </Card>
             <div className="mt-8 overflow-hidden rounded-[32px]">
               <Image
-                src="https://images.unsplash.com/photo-1683173908985-088258370dae?auto=format&fit=crop&w=1000&q=80"
+                src="https://res.cloudinary.com/dzw5pskk1/image/upload/v1770100318/WhatsApp_Image_2026-02-02_at_23.54.54_ctrn4y.jpg"
                 alt="Community meeting"
                 width={900}
                 height={600}
@@ -760,7 +775,7 @@ export default function HomePage() {
             </Card>
             <Card className="relative overflow-hidden border-transparent shadow-[0_30px_80px_-40px_rgba(12,33,27,0.5)]">
               <Image
-                src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1000&q=80"
+                src="https://res.cloudinary.com/dzw5pskk1/image/upload/v1770100319/WhatsApp_Image_2026-02-02_at_23.54.55_kt4cwy.jpg"
                 alt="Community support"
                 width={1000}
                 height={700}
@@ -785,16 +800,25 @@ export default function HomePage() {
                 />
               </div>
               <div>
-                <p className="font-display text-lg text-white">GRDO</p>
-                <p className="text-xs text-white/60">Great-Life Relief & Development</p>
+                <p className="font-display text-lg text-[#7FFC8D]">
+                  Great-Life Relief & Development
+                </p>
+                <p className="text-[11px] text-white/70">
+                  Transforming Lives. Building Resilient Communities.
+                </p>
               </div>
             </div>
             <p className="mt-4 text-sm text-white/60">
               We are committed to dignity, inclusion, and community-driven development across Somalia.
             </p>
-            <Button className="mt-6 bg-[#f4c247] text-[#0f231e] hover:bg-[#f7d16c]">
+            <a
+              href="https://wa.me/254759994805"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-flex h-11 items-center justify-center rounded-full bg-[#f4c247] px-5 text-sm font-semibold text-[#0f231e] transition hover:bg-[#f7d16c]"
+            >
               Donate now
-            </Button>
+            </a>
           </div>
           <div className="space-y-3 text-sm">
             <p className="font-semibold text-white">Links</p>
